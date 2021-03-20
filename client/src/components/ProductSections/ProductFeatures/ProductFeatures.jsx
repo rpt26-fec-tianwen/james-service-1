@@ -20,8 +20,8 @@ const ProductFeatures = (props) => {
             </ul>
           </div>
         </div>
-        <ProductFeaturesCarousel style={style}/>
-    </div>
+        <ProductFeaturesCarousel style={style} />
+      </div>
     ) : null
 }
 

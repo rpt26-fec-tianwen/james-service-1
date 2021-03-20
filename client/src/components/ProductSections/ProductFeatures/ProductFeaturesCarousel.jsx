@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import style from '../app.scss';
+// import style from '../../app.scss';
 import axios from 'axios';
 
-const ProductFeaturesCarousel = () => {
+const ProductFeaturesCarousel = (props) => {
   const [images, setImages] = useState([]);
   const [position, setPosition] = useState(0);
   const [direction, setDirection] = useState('neutral')
 
   useEffect(async () => {
-    console.log('effect used');
     const productId = window.location.href.split('/').filter((item) => { return Number(item) }).join('') || 1;
     const results = await axios(`http://localhost:8002/images/${productId}`);
     setImages(results.data)
@@ -19,7 +18,6 @@ const ProductFeaturesCarousel = () => {
       let counter = Number(position);
       const wholeNumber = setInterval(() => {
         setPosition(direction === 'forward' ? (counter += .1).toFixed(1) : (counter -= .1).toFixed(1))
-        console.log(counter.toFixed(1));
         if (counter.toFixed(1) % 1 === 0) {
           clearInterval(wholeNumber);
           setDirection('neutral')
@@ -33,7 +31,7 @@ const ProductFeaturesCarousel = () => {
     const nextResult = (/next/g).test(event.target.className);
     nextResult ?  setDirection('forward') :setDirection('backward');
   }
-
+  const {style} = props;
   const { featuresSlider, sliderRoot, slider, sliderViewport, innerSlider, figureRoot, figureFeatures, pictureRoot, arrowButton, prevNextButton, prev, next, arrowButtonIcon, arrow } = style;
 
   return (
