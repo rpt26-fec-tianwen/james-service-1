@@ -18,6 +18,7 @@ router.get('/images/:productId', async (req, res, next) => {
     method: 'GET'
   }
   let results = await axios(config);
+  console.log(results)
   results = JSON.parse(results.data.urls).reduce((arr, item) => {
     arr.push({url: item})
     return arr;

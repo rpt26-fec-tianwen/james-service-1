@@ -17,21 +17,19 @@ class App extends React.Component {
     const productId = window.location.href.split('/').filter((item) => { return Number(item) }).join('') || 1;
     const config = {
       method: 'GET',
-      // url: `http://localhost:9000/${productId}`,
       url: window.location.href,
       params: {
         indicator: 'all',
         service: 'details'
       }
     }
-    console.log(config);
 
     const results = await axios(config)
-    // console.log(results.data);
+
     this.setState({
       ...results.data
     }, () => {
-      console.log(this.state);
+      // console.log(this.state);
     })
   }
 

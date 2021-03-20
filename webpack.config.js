@@ -52,17 +52,24 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: "file-loader",
-        options: {
-          outputPath: 'fonts',
-          name: 'VAG\ Rounded\ Regular.ttf'
-        },
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
       }
     ],
   },
   devServer: {
     port: 8002,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
     contentBase: path.join(__dirname, 'client/dist'),
     proxy: {
       "/": "http://localhost:3001"
