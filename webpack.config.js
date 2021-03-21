@@ -8,7 +8,7 @@ module.exports = {
   // for production:
   // devtool: "source-map",
   mode: 'development',
-  entry: `${SRC_DIR}/index.jsx`,
+  entry: `${SRC_DIR}/components/index.jsx`,
   output: {
     filename: 'bundle.js',
     path: DIST_DIR
@@ -27,7 +27,7 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        include: path.join(__dirname, 'client/src'),
+        include: path.join(__dirname, 'client/src/styles'),
         use: [
           {
             loader: 'style-loader',

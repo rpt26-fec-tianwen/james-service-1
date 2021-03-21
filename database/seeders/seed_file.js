@@ -1,10 +1,10 @@
 'use strict';
-const productDetailsData = require('../client/dist/fakeData/fakeProductDetailsData.js');
-const productFeaturesData = require(`../client/dist/fakeData/fakeProductFeatureData.js`);
-const productDescriptionData = require(`../client/dist/fakeData/fakeProductDescriptionData.js`);
-const technicalDetailsData = require(`../client/dist/fakeData/fakeTechnicalDetailsData.js`);
-const materialSpecificationData = require('../client/dist/fakeData/fakeMaterialSpecificationData');
-const careInstructionData = require('../client/dist/fakeData/fakeCareInstructionsData.js');
+const productDetailsData = require('../fakeData/fakeProductDetailsData.js');
+const productFeaturesData = require(`../fakeData/fakeProductFeatureData.js`);
+const productDescriptionData = require(`../fakeData/fakeProductDescriptionData.js`);
+const technicalDetailsData = require(`../fakeData/fakeTechnicalDetailsData.js`);
+const materialSpecificationData = require('../fakeData/fakeMaterialSpecificationData');
+const careInstructionData = require('../fakeData/fakeCareInstructionsData.js');
 
 
 module.exports = {

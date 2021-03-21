@@ -7,14 +7,14 @@ import MaterialSpecification from './ProductSections/MaterialSpecification.jsx';
 import TechnicalDetails from './ProductSections/TechnicalDetails.jsx';
 import CareInstructions from './ProductSections/CareInstructions.jsx';
 import Extra from './ProductSections/Extra.jsx';
-import style from '../app.scss';
+import style from '../styles/app.scss';
 
 const App = () => {
   const [details, setDetails] = useState({});
 
   useEffect(async () => {
     const productId = window.location.href.split('/').filter((item) => { return Number(item) }).join('') || 1;
-    const results = await axios(window.location.href, { params: { indicator: 'all', service: 'details' } })
+    const results = await axios(`/${productId}`, { params: { indicator: 'all', service: 'details' } })
     setDetails(results.data)
     return () => {console.log(details)};
   }, [])

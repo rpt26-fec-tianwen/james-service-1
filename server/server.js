@@ -7,30 +7,24 @@ const cors = require('cors');
 
 app.use(cors());
 
-app.use('/', express.json());
-
-app.use('/', (req, res, next) => {
-  if (req.originalUrl !== '/disable_hmr_logs.js' && req.originalUrl !== '/proxy' && req.originalUrl !== '/') {
-    console.log(req.method, req.originalUrl);
-  }
-  if (req.originalUrl === '/') {
-    console.info('~Serving Client~')
+app.use('*', (req, res, next) => {
+  const { method, originalUrl } = req;
+  // console.log(originalUrl);
+  if (!(/(disable_hmr_logs.js)|(proxy)|(favicon)|(images)/).test(originalUrl)) {
+    ((/^\/\d+$/g).test(originalUrl)) ?
+      console.info('\u001b[1;35m~Serving Client~') :
+        ((/indicator=all/).test(originalUrl)) ?
+        console.info('Getting Data at ' + req.params['0']) :
+        console.info(method, originalUrl);
   }
   next();
 });
 
-app.use((req, res, next) => {
-  res.header('Cross-Origin-Embedder-Policy', 'require-corp');
-  res.header('Cross-Origin-Opener-Policy', 'same-origin');
-  res.header(`Cross-Origin-Resource-Policy`, 'cross-origin');
-  next();
-})
-
-app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static(path.resolve('client/dist')));
 
 app.use('/', router);
 
 const port = 3001;
 app.listen(port, () => {
-  console.log('Service 1 Listening on ' + port);
+  console.log(`Product Details Service listening on  port ${port}`);
 })

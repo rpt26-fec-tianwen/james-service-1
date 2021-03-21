@@ -76,12 +76,12 @@ img, svg {
 
 @font-face {
   font-family: 'Artic Fox';
-  src: url('./fonts/ArcticFox-Regular.eot');
-  src: url('./fonts/ArcticFox-Regular.eot?#iefix') format('embedded-opentype'),
-      url('./fonts/ArcticFox-Regular.woff2') format('woff2'),
-      url('./fonts/ArcticFox-Regular.woff') format('woff'),
-      url('./fonts/ArcticFox-Regular.ttf') format('truetype'),
-      url('./fonts/ArcticFox-Regular.svg#ArcticFox-Regular') format('svg');
+  src: url('../fonts/ArcticFox-Regular.eot');
+  src: url('../fonts/ArcticFox-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/ArcticFox-Regular.woff2') format('woff2'),
+      url('../fonts/ArcticFox-Regular.woff') format('woff'),
+      url('../fonts/ArcticFox-Regular.ttf') format('truetype'),
+      url('../fonts/ArcticFox-Regular.svg#ArcticFox-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -89,7 +89,7 @@ img, svg {
 
 @font-face {
   font-family: 'Artic Fox Headline';
-  src: url('fonts/ArcticFox-Headline.ttf') format('truetype');
+  src: url('../fonts/ArcticFox-Headline.ttf') format('truetype');
   font-weight: 900;
     font-style: normal;
     font-display: swap;
