@@ -7,7 +7,7 @@ const ProductDescription = (props) => {
 
   return currentComponentDetails !== undefined ? (
 
-    <div id={style[productDescription]} className={`${teaserRoot} ${descriptionRoot}`}>
+    <div id={productDescription} className={`${teaserRoot} ${descriptionRoot}`}>
       <span className={descriptionTitle}>Product Description</span>
       <div className={descriptionContent}>
         <div className={description}>

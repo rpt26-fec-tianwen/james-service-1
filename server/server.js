@@ -9,7 +9,6 @@ app.use(cors());
 
 app.use('*', (req, res, next) => {
   const { method, originalUrl } = req;
-  // console.log(originalUrl);
   if (!(/(disable_hmr_logs.js)|(proxy)|(favicon)|(images)/).test(originalUrl)) {
     ((/^\/\d+$/g).test(originalUrl)) ?
       console.info('\u001b[1;35m~Serving Client~') :
@@ -24,7 +23,7 @@ app.use(express.static(path.resolve('client/dist')));
 
 app.use('/', router);
 
-const port = 3001;
+const port = 8002;
 app.listen(port, () => {
-  console.log(`Product Details Service listening on  port ${port}`);
-})
+  console.log(`Details service is listening on port ${port}`)
+});

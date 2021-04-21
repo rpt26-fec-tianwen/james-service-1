@@ -6,7 +6,7 @@ import ProductDescription from './ProductSections/ProductDescription.jsx';
 import MaterialSpecification from './ProductSections/MaterialSpecification.jsx';
 import TechnicalDetails from './ProductSections/TechnicalDetails.jsx';
 import CareInstructions from './ProductSections/CareInstructions.jsx';
-import Extra from './ProductSections/Extra.jsx';
+// import Extra from './ProductSections/Extra.jsx';
 import style from '../styles/app.scss';
 
 const App = () => {
@@ -14,9 +14,10 @@ const App = () => {
 
   useEffect(async () => {
     const productId = window.location.href.split('/').filter((item) => { return Number(item) }).join('') || 1;
-    const results = await axios(`/${productId}`, { params: { indicator: 'all', service: 'details' } })
+    const results = await axios(`/details/${productId}`, { params: { indicator: 'all', service: 'details' } })
+    console.log(results.data);
     setDetails(results.data)
-    return () => {console.log(details)};
+    return () => { console.log(details) };
   }, [])
 
   const { product_details, product_features, product_description, material_specification, technical_details, care_instructions } = details;

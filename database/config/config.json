@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "CloudlessSky82",
+    "password": "JuniperSmoke181",
     "database": "product_info",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "CloudlessSky82",
+    "password": "JuniperSmoke181",
     "database": "product_info",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "CloudlessSky82",
+    "password": "JuniperSmoke181",
     "database": "product_info",
     "host": "127.0.0.1",
     "dialect": "mysql"

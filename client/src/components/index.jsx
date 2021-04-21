@@ -8,4 +8,4 @@ const Index = () => {
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('jamesroot'));
+ReactDOM.render(<App />, document.getElementById('detailsroot'));

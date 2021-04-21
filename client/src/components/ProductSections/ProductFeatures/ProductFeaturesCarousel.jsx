@@ -9,8 +9,8 @@ const ProductFeaturesCarousel = (props) => {
 
   useEffect(async () => {
     const productId = window.location.href.split('/').filter((item) => { return Number(item) }).join('') || 1;
-    const results = await axios(`http://localhost:8002/images/${productId}`);
-    setImages(results.data)
+    const results = await axios(`/images/${productId}`);
+    setImages(JSON.parse(results.data.urls));
   }, []);
 
   useEffect(() => {
@@ -23,15 +23,15 @@ const ProductFeaturesCarousel = (props) => {
           setDirection('neutral')
         }
       }, 35)
-      return () => {clearInterval(wholeNumber)}
+      return () => { clearInterval(wholeNumber) }
     }
   }, [direction])
 
   const changeImage = (event) => {
     const nextResult = (/next/g).test(event.target.className);
-    nextResult ?  setDirection('forward') :setDirection('backward');
+    nextResult ? setDirection('forward') : setDirection('backward');
   }
-  const {style} = props;
+  const { style } = props;
   const { featuresSlider, sliderRoot, slider, sliderViewport, innerSlider, figureRoot, figureFeatures, pictureRoot, arrowButton, prevNextButton, prev, next, arrowButtonIcon, arrow } = style;
 
   return (
@@ -46,7 +46,7 @@ const ProductFeaturesCarousel = (props) => {
                     return (
                       <figure className={`${figureRoot}, ${figureFeatures}`} style={{ position: 'absolute', left: `${index * 100}%` }} key={index}>
                         <picture className={pictureRoot}>
-                          <img crossOrigin='true' src={Object.values(image)}></img>
+                          <img crossOrigin='true' src={image}></img>
                         </picture>
                       </figure>
                     )

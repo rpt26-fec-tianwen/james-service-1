@@ -12,7 +12,8 @@
     "build": "webpack --watch",
     "test": "mocha --require ignore-styles --require @babel/register ./client/tests --recursive",
     "dev": "webpack serve",
-    "prod": "webpack --mode=production"
+    "prod": "webpack --mode=production",
+    "login": "bash login.sh"
   },
   "dependencies": {
     "axios": "^0.21.1",
