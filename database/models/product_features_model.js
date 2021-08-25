@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       unique: false,
     }
-  }, {})
+  }, {});
 
   return ProductFeatures;
 };

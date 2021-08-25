@@ -1,7 +1,3 @@
-// const Sequelize = require('sequelize');
-// const sequelize = require('../config.js').sequelize;
-// const ProductDetails = require('./product_details_model.js')
-
 module.exports = (sequelize, DataTypes) => {
   const CareInstructions = sequelize.define('care_instructions', {
     washing: {
@@ -34,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       unique: false
     }
-  }, {})
+  }, {});
 
   return CareInstructions;
 };

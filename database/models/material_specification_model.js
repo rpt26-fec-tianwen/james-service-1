@@ -1,9 +1,3 @@
-// const Sequelize = require('sequelize');
-// const sequelize = require('../config.js').sequelize;
-
-// const MaterialSpec = sequelize.define("material_specification", {
-// });
-
 module.exports = (sequelize, DataTypes) => {
   const MaterialSpecifications = sequelize.define('material_specifications', {
     material: {
@@ -29,6 +23,4 @@ module.exports = (sequelize, DataTypes) => {
   }, {})
 
   return MaterialSpecifications;
-}
-
-// module.exports = MaterialSpec;
+};

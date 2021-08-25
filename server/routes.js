@@ -10,7 +10,6 @@ router.get('/bundle.js', (req, res, next) => {
 })
 
 router.get('/images/:productId', async (req, res, next) => {
-  console.log(req.params)
   try {
     let results = await axios(`http://localhost:8001/display/${req.params.productId}`);
     results = JSON.parse(results.data.urls).reduce((arr, item) => {
@@ -57,7 +56,6 @@ router.get('/details/:productId', async (req, res) => {
 })
 
 router.get('/:productId', async (req, res, next) => {
-  console.log(req.query.indicator);
   // This first condition is for local development only.
   if (!req.query.indicator) {
     res.sendFile(path.resolve('client/dist/index.html'));

@@ -1,5 +1,3 @@
-const sequelize = require('../config.js')
-
 module.exports = (sequelize, DataTypes) => {
   const ProductDescription = sequelize.define("product_descriptions", {
     product_description: {
@@ -39,4 +37,4 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   return ProductDescription;
-}
+};

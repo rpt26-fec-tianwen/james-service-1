@@ -1,13 +1,4 @@
-// const Sequelize = require('sequelize');
 require('dotenv').config()
-
-// const sequelize = new Sequelize(process.env.database, process.env.user, process.env.password, {
-//   host: process.env.host,
-//   dialect: "mysql",
-//   // operatorsAliases: false
-// });
-
-// module.exports = sequelize;
 
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(process.env.database, process.env.user, process.env.password, {
@@ -36,7 +27,6 @@ const ProductDescription = require('./models/product_description_model.js')(sequ
 const MaterialSpecification = require('./models/material_specification_model.js')(sequelize, Sequelize.DataTypes);
 const TechnicalDetails = require('./models/technical_details_model.js')(sequelize, Sequelize.DataTypes);
 const CareInstructions = require(`./models/care_instructions_model.js`)(sequelize, Sequelize.DataTypes);
-
 
 module.exports = (database) = {
   sequelize: sequelize,

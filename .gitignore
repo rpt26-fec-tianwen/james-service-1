@@ -3,3 +3,5 @@ node_modules
 *.pem
 *.sh
 scp scripts
+client/dist/.DS_Store
+client/src/.DS_Store

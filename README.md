@@ -46,7 +46,7 @@ Fjakeraven Product Details Service
           -npm rebuild node-sass
 
 ### Seeding-Database
-1. Install mySql->
+1. Install mySQL->
     - npm install mysql
     - sudo apt-get install mysql-client
     - sudo apt-get install mysql-server

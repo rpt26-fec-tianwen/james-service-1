@@ -1,7 +1,7 @@
 {
   "name": "product-details-section",
-  "version": "",
-  "description": "",
+  "version": "1.0",
+  "description": "This is a product details service for a mock fjallraven.com website",
   "author": "James C. Hrivnak",
   "license": "",
   "engines": {
